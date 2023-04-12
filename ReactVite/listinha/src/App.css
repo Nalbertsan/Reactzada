@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #407af8;
+  -webkit-font-smoothing: antialiased;
+}
+
+button{
+  cursor: pointer;
+}
