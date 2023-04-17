@@ -51,3 +51,39 @@
     width: 80%;
 }
 
+.tarefas{
+    width: 100%;
+    margin-top: 30px;
+}
+.tarefas li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 10px 20px;
+    background-color: #bebaba;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: all 600ms;
+}
+
+.edit{
+    margin-right: 10px;
+    color: #51c5de;
+}
+.close{
+    color: #f00;
+}
+
+.edit:hover, .close:hover{
+    cursor: pointer;
+}
+
+.tarefas li:hover{
+    background-color: #eee;
+}
+
+.tarefas li span{
+    display: flex;
+    align-items: center;
+}
