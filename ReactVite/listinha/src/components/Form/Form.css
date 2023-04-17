@@ -1,0 +1,32 @@
+.form input{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.form button{
+    width: 30%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #407af8;
+    border: 0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.form button:active{
+    background-color: #022c86;
+}
+
+.form {
+    display: flex;
+    width: 80%;
+}

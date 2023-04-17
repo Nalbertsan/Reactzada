@@ -18,72 +18,8 @@
     margin-bottom: 20px;
 }
 
-.conteinner input{
-    width: 100%;
-    height: 50px;
-    padding: 0 20px;
+.conteinner p{
     font-size: 16px;
     color: #333;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.conteinner button{
-    width: 30%;
-    height: 50px;
-    padding: 0 20px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #407af8;
-    border: 0;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.conteinner button:active{
-    background-color: #022c86;
-}
-
-.conteinner form{
-    display: flex;
-    width: 80%;
-}
-
-.tarefas{
-    width: 100%;
-    margin-top: 30px;
-}
-.tarefas li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    padding: 10px 20px;
-    background-color: #bebaba;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: all 600ms;
-}
-
-.edit{
-    margin-right: 10px;
-    color: #51c5de;
-}
-.close{
-    color: #f00;
-}
-
-.edit:hover, .close:hover{
-    cursor: pointer;
-}
-
-.tarefas li:hover{
-    background-color: #eee;
-}
-
-.tarefas li span{
-    display: flex;
-    align-items: center;
+    margin-bottom: 20px;
 }

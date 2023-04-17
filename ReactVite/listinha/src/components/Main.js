@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import './Main.css';
-import {TfiAngleDoubleRight} from "react-icons/tfi";
-import {FaEdit,FaWindowClose} from "react-icons/fa";
+import Form from './Form';
+import Tarefa from "./Tarefa";
+
 
 
 export default class  Main extends Component{
@@ -9,7 +10,20 @@ export default class  Main extends Component{
     novaTarefa: '',
     tarefas: [],
     index: -1,
+    modo: 'Criação',
   };
+
+  componentDidMount(){
+    const tarefas = JSON.parse(localStorage.getItem('tarefas'));
+    if(!tarefas) return;
+    this.setState({tarefas})
+  }
+
+  componentDidUpdate(prevProps,prevState){
+    const {tarefas} = this.state;
+    if(tarefas === prevState.tarefas) return;
+    localStorage.setItem('tarefas',JSON.stringify(tarefas));
+  }
 
   handleCharge = (e) => {
     this.setState({
@@ -40,6 +54,7 @@ export default class  Main extends Component{
         tarefas: [...novasTarefas],
         index:-1,
         novaTarefa: '',
+        modo: 'Criação'
       });
     }
 
@@ -63,33 +78,20 @@ export default class  Main extends Component{
     this.setState({
       index,
       novaTarefa: tarefas[index],
+      modo: 'Edição'
     });
   }
 
+
   render(){
-    const {novaTarefa, tarefas} = this.state;
+    const {novaTarefa, tarefas,modo} = this.state;
     return (
       <div className="todo">
       <div className="conteinner">
         <h1>Lista de Tarefas</h1>
-        <form onSubmit={this.handleSubmit} action="#">
-          <input  onChange={this.handleCharge} value={novaTarefa} type="text"></input>
-          <button type="submit">
-            <TfiAngleDoubleRight/>
-          </button>
-        </form>
-        <ul className="tarefas">
-          {tarefas.map((tarefa,index) => (
-            <li key={tarefa}>
-              {tarefa}
-              <span>
-                <FaEdit onClick={(e) => this.handleEdit(e,index)} className="edit"/>
-                <FaWindowClose onClick={(e) => this.handleDelete(e,index)} className="close"/>
-              </span>
-
-            </li>
-          ))}
-        </ul>
+        <p>Modo:{modo}</p>
+        <Form handleSubmit ={this.handleSubmit} handleCharge = {this.handleCharge} novaTarefa = {novaTarefa}/>
+        <Tarefa handleDelete={this.handleDelete} handleEdit={this.handleEdit} tarefas={tarefas}/>
       </div>
       </div>
     )
